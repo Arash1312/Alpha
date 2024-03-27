@@ -167,7 +167,14 @@ sudo systemctl restart celestia-appd && journalctl -u celestia-appd -f -o cat
 
 -------------------------------------------------
 CTRL+C Ø±Ø§ ÙØ´Ø§Ø± Ø¯Ù‡ÛŒØ¯ ØªØ§ Ù„Ø§Ú¯ Ù‡Ø§ Ù…ØªÙˆÙ‚Ù Ø´ÙˆÙ†Ø¯
-
+cd $HOME
+ver="1.18.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ---------------------------------
 Ù‚Ø¨Ù„ Ø§Ø² Ø§Ø¯Ø§Ù…Ù‡ØŒ Ø¨Ø§ Ú©Ø¯ Ø²ÛŒØ± Ù…Ø·Ù…Ø¦Ù† Ø´ÙˆÛŒØ¯ Ú©Ù‡ Ø¨Ù‡ Ø·ÙˆØ± Ú©Ø§Ù…Ù„ Ø¨Ø§ Ø´Ø¨Ú©Ù‡ Ù‡Ù…Ú¯Ø§Ù… Ø´Ø¯Ù‡ Ø§ÛŒØ¯ 
 
