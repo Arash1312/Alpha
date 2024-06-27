@@ -14,7 +14,6 @@ rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 sudo apt update && sudo apt upgrade -y
-sudo apt update && sudo apt upgrade -y
 ---------------------------------------------------
 go version
 cd $HOME
@@ -55,16 +54,13 @@ echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
 echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
 echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
 source $HOME/.bash_profile
-
 ------------------------------------------------
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
-
 -------------------------------------
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
-
 ---------------------------------------
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
-
+CELESTIA_WALLET="MY_WALLET"
 ---------------------------------------------
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
 
@@ -82,7 +78,7 @@ sed -i 's/peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = "2ms"/g' 
 max_num_inbound_peers=40 
 max_num_outbound_peers=10 
 max_connections=50
-
+CELESTIA_WALLET="MY_WALLET"
 ----------------------------------------------------------------
 sed -i -e "s/^use-legacy *=.*/use-legacy = false/;\
 s/^max-num-inbound-peers *=.*/max-num-inbound-peers = $max_num_inbound_peers/;\
@@ -110,7 +106,7 @@ celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 
 celestia-appd config chain-id $CELESTIA_CHAIN
 celestia-appd config keyring-backend test
-
+CELESTIA_WALLET="MY_WALLET"
 -------------------------------------------------------
 tee $HOME/celestia-appd.service > /dev/null <<EOF
 [Unit]
