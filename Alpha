@@ -88,13 +88,10 @@ s/^max-connections *=.*/max-connections = $max_connections/" $HOME/.celestia-app
 ------------------------------------------------
 pruning_keep_recent="100" 
 pruning_interval="10"
-
 ------------------------------------------------------
-
 sed -i -e "s/^pruning *=.*/pruningÂ = \"custom\"/;\
 s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/;\
 s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.celestia-app/config/app.toml
-
 --------------------------------------------
 
 sed -i 's/snapshot-interval *=.*/snapshot-interval = 0/' $HOME/.celestia-app/config/app.toml
@@ -230,3 +227,8 @@ sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+-----------------------------------------------
+
+sed -i -e "s/^pruning *=.*/pruningÂ = \"custom\"/;\
+s/^pruning-keep-recent *=.*/pruning-keep-recent = \"$pruning_keep_recent\"/;\
+s/^pruning-interval *=.*/pruning-interval = \"$pruning_interval\"/" $HOME/.celestia-app/config/app.toml
