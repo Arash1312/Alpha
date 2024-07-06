@@ -68,7 +68,7 @@ echo $BOOTSTRAP_PEERS
 ------------------------------------------------
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
-
+deployment/Dockerfile
 -----------------------------------------------------------
 sed -i 's/timeout-commit = ".*/timeout-commit = "25s"/g' $HOME/.celestia-app/config/config.toml
 sed -i 's/peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = "2ms"/g' $HOME/.celestia-app/config/config.toml
@@ -119,6 +119,7 @@ tee $HOME/celestia-appd.service > /dev/null <<EOF
 [Install]
   WantedBy=multi-user.target
 EOF
+celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
 
 ---------------------------------------------------
 sudo mv $HOME/celestia-appd.service /etc/systemd/system/
