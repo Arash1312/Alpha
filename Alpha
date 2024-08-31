@@ -62,7 +62,11 @@ sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/con
 CELESTIA_WALLET="MY_WALLET"
 ---------------------------------------------
 BOOTSTRAP_PEERS=$(curl -sL https://raw.githubusercontent.com/celestiaorg/networks/master/mamaki/bootstrap-peers.txt | tr -d '\n')
-
+go version
+cd $HOME
+rm -rf celestia-app
+git clone https://github.com/celestiaorg/celestia-app.git
+cd celestia-app
 --------------------------------------------------
 echo $BOOTSTRAP_PEERS
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
@@ -108,9 +112,7 @@ echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
 
 ---------------------------------------------------
 celestia-appd tendermint unsafe-reset-all --home $HOME/.celestia-app
-
 ---------------------------------------------------
-
 celestia-appd config chain-id $CELESTIA_CHAIN
 celestia-appd config keyring-backend test
 CELESTIA_WALLET="MY_WALLET"
@@ -171,7 +173,7 @@ SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/Â | \
     egrep -o ">mamaki.*tar" | tr -d ">")
 wget -O - https://snaps.qubelabs.io/celestia/${SNAP_NAME}Â | tar xf - \
     -C ~/.celestia-app/data/
-
+rm -rf ~/.celestia-app/data
 ------------------------------------------------------------------
 Ù…Ù†ØªØ¸Ø± Ø¨Ù…Ø§Ù†ÛŒØ¯ ØªØ§ Ú¯Ø±Ù‡ Ø´Ù…Ø§ Ø§Ú©Ø«Ø± Ø¨Ù„ÙˆÚ© Ù‡Ø§ Ø±Ø§ Ø§Ø² Ø²Ù†Ø¬ÛŒØ±Ù‡ Ø¨Ù„ÙˆÚ©ÛŒ Celestia Ø¯Ø§Ù†Ù„ÙˆØ¯ Ú©Ù†Ø¯
 
