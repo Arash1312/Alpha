@@ -13,9 +13,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 sudo apt update && sudo apt upgrade -y
 --------------------------
-sudo apt update && sudo apt upgrade -y
-Ø§Ø·Ù„Ø§Ø¹Ø§Øª  Ø¯Ø§Ø®Ù„ "" Ø±Ùˆ Ù¾Ø§Ú© Ú©Ù†ÛŒØ¯(ÙÙ‚Ø· Ø®Ø· Ø§ÙˆÙ„ Ùˆ Ø¯ÙˆÙ…) Ùˆ Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ø®ÙˆØ¯ØªÙˆÙ† Ø±Ùˆ Ù‚Ø±Ø§Ø± Ø¨Ø¯ÛŒØ¯
-Ø¨Ù‡ Ø¹Ù†ÙˆØ§Ù† Ù…Ø«Ø§Ù„ :
+
 cd $HOME
 CELESTIA_NODENAME="amir" 
 CELESTIA_WALLET="amir8372"
