@@ -42,9 +42,6 @@ git checkout v0.6.0
 sudo apt update && sudo apt upgrade -y
 
 ----------------------------------------------------------
-echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
-echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
-echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
 source $HOME/.bash_profile
 rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
@@ -53,6 +50,9 @@ cd celestia-app
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
 -------------------------------------
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
+echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
+echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
 ---------------------------------------
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
 CELESTIA_WALLET="MY_WALLET"
