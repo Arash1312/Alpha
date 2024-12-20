@@ -96,6 +96,10 @@ max_num_inbound_peers=40
 max_num_outbound_peers=10 
 max_connections=50
 CELESTIA_WALLET="MY_WALLET"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
 ----------------------------------------------------------------
 sed -i -e "s/^use-legacy *=.*/use-legacy = false/;\
 s/^max-num-inbound-peers *=.*/max-num-inbound-peers = $max_num_inbound_peers/;\
