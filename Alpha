@@ -3,9 +3,7 @@ for github
 ------------------------------------------
 sudo apt update && sudo apt upgrade -y
 ---------------------------------------------
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
-er="1.18.3"
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
@@ -90,7 +88,9 @@ deployment/Dockerfile
 -----------------------------------------------------------
 sed -i 's/timeout-commit = ".*/timeout-commit = "25s"/g' $HOME/.celestia-app/config/config.toml
 sed -i 's/peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = "2ms"/g' $HOME/.celestia-app/config/config.toml
-
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
+er="1.18.3"
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 -----------------------------------------------------------------
 max_num_inbound_peers=40 
 max_num_outbound_peers=10 
