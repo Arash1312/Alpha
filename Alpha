@@ -3,7 +3,6 @@ for github
 ------------------------------------------
 sudo apt update && sudo apt upgrade -y
 ---------------------------------------------
-
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
@@ -440,15 +439,14 @@ $request celestia1a35035fu83jkeeqz00d3jmt3k5wu5x3lyvn6qp
 
 celestia-appd q bank balances xxxxxxxxxxxxx
 -----------------------------------------------
-cd $HOME
-ver="1.18.3"
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
---------------
+sudo apt update && sudo apt upgrade -y
+--------------------------
+
 cd $HOME
 ver="1.18.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
