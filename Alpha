@@ -3,17 +3,7 @@ for github
 ------------------------------------------
 sudo apt update && sudo apt upgrade -y
 
---------------------------
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-cd $HOME
-CELESTIA_NODENAME="amir" 
-CELESTIA_WALLET="amir8372"
-CELESTIA_CHAIN="mamaki"
-cd $HOME
-CELESTIA_NODENAME="MY_NODE" 
-CELESTIA_WALLET="MY_WALLET"
-CELESTIA_CHAIN="mamaki"
-sudo apt update && sudo apt upgrade -y
+
 -------------------------------------------------
 go version
 cd $HOME
@@ -397,7 +387,17 @@ execute_and_prompt "Minting token..." "spl-token mint $token_address 10000"
 echo
 execute_and_prompt "Checking token accounts..." "spl-token accounts"
 echo
-
+--------------------------
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+cd $HOME
+CELESTIA_NODENAME="amir" 
+CELESTIA_WALLET="amir8372"
+CELESTIA_CHAIN="mamaki"
+cd $HOME
+CELESTIA_NODENAME="MY_NODE" 
+CELESTIA_WALLET="MY_WALLET"
+CELESTIA_CHAIN="mamaki"
+sudo apt update && sudo apt upgrade -y
 cd $HOME
 
 echo -e "${YELLOW}Installing @solana/web3.js...${NC}"
