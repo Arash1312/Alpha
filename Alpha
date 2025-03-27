@@ -1,11 +1,5 @@
 
-go version
-cd $HOME
-git checkout v0.6.0
-make install
-polygon-appd version
-make install
--------------------------------------------
+
 git clone https://github.com/celestiaorg/networks
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 sudo apt update && sudo apt upgrade -y
@@ -14,7 +8,13 @@ er="1.18.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 -------------------------------
+go version
 cd $HOME
+git checkout v0.6.0
+make install
+polygon-appd version
+make install
+-------------------------------------------
 rm -rf networks
 git clone https://github.com/celestiaorg/networks.git
 git checkout v0.6.0
