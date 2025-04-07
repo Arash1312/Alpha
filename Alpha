@@ -12,10 +12,10 @@ git checkout v0.6.0
 make install
 polygon-appd version
 make install
+pruning_keep_recent="100" 
 -------------------------------------------
 rm -rf networks
-git clone https://github.com/celestiaorg/networks.git
-git checkout v0.6.0
+
 sudo apt update && sudo apt upgrade -y
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -35,6 +35,8 @@ cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
 echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
 echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
+git clone https://github.com/celestiaorg/networks.git
+git checkout v0.6.0
 ---------------------------------------
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
 CELESTIA_WALLET="MY_WALLET"
@@ -93,7 +95,7 @@ s/^max-num-outbound-peers *=.*/max-num-outbound-peers = $max_num_outbound_peers/
 s/^max-connections *=.*/max-connections = $max_connections/" $HOME/.celestia-app/config/config.toml
 
 ------------------------------------------------
-pruning_keep_recent="100" 
+
 pruning_interval="10"
 ------------------------------------------------------
 sed -i -e "s/^pruning *=.*/pruningÂ = \"custom\"/;\
