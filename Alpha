@@ -1,6 +1,6 @@
 
 
-git clone https://github.com/celestiaorg/networks
+
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
@@ -15,7 +15,7 @@ make install
 pruning_keep_recent="100" 
 -------------------------------------------
 rm -rf networks
-
+git clone https://github.com/celestiaorg/networks
 sudo apt update && sudo apt upgrade -y
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -29,7 +29,7 @@ rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
 cd celestia-app
 ------------------------------------------------
-celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
+
 -------------------------------------
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
@@ -72,7 +72,7 @@ sed -i 's/peer-gossip-sleep-duration *=.*/peer-gossip-sleep-duration = "2ms"/g' 
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 er="1.18.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-
+celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
 ---------------------------------------------
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
