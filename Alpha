@@ -9,7 +9,7 @@ sudo rm -rf /usr/local/go
 -------------------------------
 go version
 cd $HOME
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
+
 make install
 polygon-appd version
 make install
@@ -52,7 +52,7 @@ git clone https://github.com/celestiaorg/celestia-app.git
 cd celestia-app
 --------------------------------------------------
 echo $BOOTSTRAP_PEERS
-
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 er="1.18.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
