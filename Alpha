@@ -3,7 +3,13 @@ git checkout v0.6.0
 git clone https://github.com/celestiaorg/networks
 sudo apt update && sudo apt upgrade -y
 ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
+rm -rf networks
 
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+rm "go$ver.linux-amd64.tar.gz"
+ece
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 -------------------------------
@@ -15,13 +21,7 @@ polygon-appd version
 make install
 pruning_keep_recent="100" 
 -------------------------------------------
-rm -rf networks
 
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-rm "go$ver.linux-amd64.tar.gz"
-ece
 source $HOME/.bash_profile
 ----------------------------------------------------------
 source $HOME/.bash_profile
