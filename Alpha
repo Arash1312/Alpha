@@ -1,4 +1,7 @@
-
+echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
+echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
+echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
+git clone https://github.com/celestiaorg/networks.git
 
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -32,10 +35,7 @@ cd celestia-app
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 -------------------------------------
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-echo 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
-echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
-echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
-git clone https://github.com/celestiaorg/networks.git
+
 git checkout v0.6.0
 ---------------------------------------
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
