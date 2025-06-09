@@ -12,6 +12,11 @@ make install
 pruning_keep_recent="100" 
 -------------------------------------------
 git checkout v0.6.0
+go version
+cd $HOME
+cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+make install
+polygon-app
 git clone https://github.com/celestiaorg/networks
 sudo apt update && sudo apt upgrade -y
 ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
