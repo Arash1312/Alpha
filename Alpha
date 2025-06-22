@@ -11,16 +11,7 @@ polygon-appd version
 make install
 pruning_keep_recent="100" 
 -------------------------------------------
-git checkout v0.6.0
-go version
-cd $HOME
-cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
-make install
-polygon-app
-git clone https://github.com/celestiaorg/networks
-sudo apt update && sudo apt upgrade -y
-ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
-rm -rf networks
+
 cho 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
 echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $HOME/.bash_profile
 echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
@@ -40,7 +31,16 @@ cd celestia-app
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 -------------------------------------
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
-
+git checkout v0.6.0
+go version
+cd $HOME
+cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+make install
+polygon-app
+git clone https://github.com/celestiaorg/networks
+sudo apt update && sudo apt upgrade -y
+ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
+rm -rf networks
 git checkout v0.6.0
 ---------------------------------------
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
