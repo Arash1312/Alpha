@@ -1,11 +1,11 @@
-e
+ego version
+cd $HOME
+cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 -------------------------------
-go version
-cd $HOME
-cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+
 make install
 polygon-appd version
 make install
