@@ -13,9 +13,6 @@ polygon-appd version
 make install
 pruning_keep_recent="100" 
 -------------------------------------------
-
-
-
 rm "go$ver.linux-amd64.tar.gz"
 ece
 source $HOME/.bash_profile
@@ -109,7 +106,9 @@ udo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsd
 er="1.18.3"
 pruning_interval="10"
 ------------------------------------------------------
-
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
+er="1.18.3"
 --------------------------------------------
 
 
