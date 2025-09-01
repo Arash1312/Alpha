@@ -17,10 +17,7 @@ rm "go$ver.linux-amd64.tar.gz"
 ece
 source $HOME/.bash_profile
 ----------------------------------------------------------
-source $HOME/.bash_profile
-rm -rf celestia-app
-git clone https://github.com/celestiaorg/celestia-app.git
-cd celestia-app
+
 ------------------------------------------------
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 git clone https://github.com/celestiaorg/networks.git
@@ -38,7 +35,10 @@ git clone https://github.com/celestiaorg/networks
 sudo apt update && sudo apt upgrade -y
 ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
 rm -rf networks
-git checkout v0.6.0
+source $HOME/.bash_profile
+rm -rf celestia-app
+git clone https://github.com/celestiaorg/celestia-app.git
+cd celestia-appgit checkout v0.6.0
 ---------------------------------------
 sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
 CELESTIA_WALLET="MY_WALLET"
