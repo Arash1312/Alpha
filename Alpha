@@ -17,7 +17,12 @@ rm "go$ver.linux-amd64.tar.gz"
 ece
 source $HOME/.bash_profile
 ----------------------------------------------------------
-
+polygon-app
+git clone https://github.com/celestiaorg/networks
+sudo apt update && sudo apt upgrade -y
+ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
+rm -rf networks
+source $HOME/.bash_profile
 ------------------------------------------------
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 git clone https://github.com/celestiaorg/networks.git
@@ -30,12 +35,7 @@ go version
 cd $HOME
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 make install
-polygon-app
-git clone https://github.com/celestiaorg/networks
-sudo apt update && sudo apt upgrade -y
-ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
-rm -rf networks
-source $HOME/.bash_profile
+
 rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
 cd celestia-appgit checkout v0.6.0
