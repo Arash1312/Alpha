@@ -5,16 +5,16 @@ echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 -------------------------------
-p $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
-cho 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
-echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $H
+
 make install
 polygon-appd version
 make install
 pruning_keep_recent="100" 
 -------------------------------------------
 rm "go$ver.linux-amd64.tar.gz"
-ece
+ecep $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+cho 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
+echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $H
 source $HOME/.bash_profile
 ----------------------------------------------------------
 polygon-app
