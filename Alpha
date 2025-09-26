@@ -5,10 +5,7 @@ polygon-appd version
 make install
 pruning_keep_recent="100" 
 -------------------------------------------
-rm "go$ver.linux-amd64.tar.gz"
-ecep $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
-cho 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
-echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $H
+
 source $HOME/.bash_profile
 ----------------------------------------------------------
 polygon-app
@@ -19,7 +16,10 @@ rm -rf networks
 source $HOME/.bash_profile
 -ego version
 cd $HOME
-
+rm "go$ver.linux-amd64.tar.gz"
+ecep $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+cho 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
+echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $H
 sudo rm -rf /usr/local/go-----------------------------------------------
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 git clone https://github.com/celestiaorg/networks.git
