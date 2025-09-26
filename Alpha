@@ -24,9 +24,7 @@ sudo rm -rf /usr/local/go-----------------------------------------------
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 git clone https://github.com/celestiaorg/networks.git
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"-------------------------------------
-sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
+
 git checkout v0.6.0
 go version
 cd $HOME
@@ -61,7 +59,9 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 sudo apt update && sudo apt upgrade -y
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
-------------------------------------------------
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"-------------------------------------
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"------------------------------------------------
 sed -i.bak -e "s/^bootstrap-peers *=.*/bootstrap-peers = \"$BOOTSTRAP_PEERS\"/" $HOME/.celestia-app/config/config.toml
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
 deployment/Dockerfile
