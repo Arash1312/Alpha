@@ -8,16 +8,7 @@ pruning_keep_recent="100"
 
 source $HOME/.bash_profile
 ----------------------------------------------------------
-polygon-app
-git clone https://github.com/celestiaorg/networks
-sudo apt update && sudo apt upgrade -y
-ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
-rm -rf networks
-source $HOME/.bash_profile
--ego version
-cd $HOME
-rm "go$ver.linux-amd64.tar.gz"
-ecep $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
+
 cho 'export CELESTIA_CHAIN='$CELESTIA_CHAIN >> $HOME/.bash_profile
 echo 'export CELESTIA_NODENAME='${CELESTIA_NODENAME} >> $H
 sudo rm -rf /usr/local/go-----------------------------------------------
@@ -72,7 +63,16 @@ sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bs
 er="1.18.3"
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 celestia-appd init $CELESTIA_NODENAME --chain-id $CELESTIA_CHAIN
----------------------------------------------
+polygon-app
+git clone https://github.com/celestiaorg/networks
+sudo apt update && sudo apt upgrade -y
+ho "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profil
+rm -rf networks
+source $HOME/.bash_profile
+-ego version
+cd $HOME
+rm "go$ver.linux-amd64.tar.gz"
+ecep $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/---------------------------------------------
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz"
 rm "go$ver.linux-amd64.tar.gz"
