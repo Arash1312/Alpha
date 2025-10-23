@@ -1,7 +1,5 @@
 
-make install
-rm -rf celestia-app
-git clone https://github.com/celestiaorg/celestia-app.git
+
 -------------------------------
 make install
 polygon-appd version
@@ -11,7 +9,9 @@ pruning_keep_recent="100"
 
 source $HOME/.bash_profile
 ----------------------------------------------------------
-
+make install
+rm -rf celestia-app
+git clone https://github.com/celestiaorg/celestia-app.git
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 git checkout v0.6.0
 go version
