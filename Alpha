@@ -1,9 +1,5 @@
 ---------------------------------------
-sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
-CELESTIA_WALLET="MY_WALLET"
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
-er="1.18.3"
+
 
 -------------------------------
 make install
@@ -24,7 +20,11 @@ cd $HOME
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
 
 cd celestia-appgit checkout v0.6.0
-
+sed -i 's/mode = \"full\"/mode = \"validator\"/g' $HOME/.celestia-app/config/config.toml
+CELESTIA_WALLET="MY_WALLET"
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
+er="1.18.3"
 cOME/.bash_profile
 echo 'export CELESTIA_WALLET='${CELESTIA_WALLET} >> $HOME/.bash_profile
 wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"---------------------------------------------
