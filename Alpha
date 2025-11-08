@@ -1,5 +1,9 @@
 ---------------------------------------
-
+make install
+rm -rf celestia-app
+git clone https://github.com/celestiaorg/celestia-app.git
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
+git checkout v0.6.0
 
 -------------------------------
 make install
@@ -10,11 +14,7 @@ pruning_keep_recent="100"
 
 source $HOME/.bash_profile
 ----------------------------------------------------------
-make install
-rm -rf celestia-app
-git clone https://github.com/celestiaorg/celestia-app.git
-wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
-git checkout v0.6.0
+
 go version
 cd $HOME
 cp $HOME/networks/mamaki/genesis.json $HOME/.celestia-app/config/
