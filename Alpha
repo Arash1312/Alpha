@@ -6,10 +6,7 @@ wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz"
 git checkout v0.6.0
 
 -------------------------------
-make install
-polygon-appd version
-make install
-pruning_keep_recent="100" 
+
 -------------------------------------------
 
 source $HOME/.bash_profile
@@ -34,7 +31,10 @@ cd $HOME
 rm -rf celestia-app
 git clone https://github.com/celestiaorg/celestia-app.git
 cd celestia-app
---------------------------------------------------
+-make install
+polygon-appd version
+make install
+pruning_keep_recent="100" -------------------------------------------------
 echo $BOOTSTRAP_PEERS
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu -y
 er="1.18.3"
