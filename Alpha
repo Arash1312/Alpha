@@ -4,6 +4,11 @@
 - Relay module
 - Lamp or light circuit
 - 5V power supply
+## Features
+- Remote ON/OFF control
+- Secure API key authentication
+- Simple REST API
+- Works with ESP8266 / ESP32
 
 ## Security Notice
 Never expose the device directly to the public internet without authentication, HTTPS tunneling, or a VPN.
@@ -11,9 +16,4 @@ Never expose the device directly to the public internet without authentication, 
 This project allows you to remotely turn OFF the lights in your home using a Wi-Fi–enabled microcontroller (e.g., ESP8266 or ESP32).  
 The system uses a secure HTTP endpoint and a relay module connected to the lamp circuit.
 
-## Features
-- Remote ON/OFF control
-- Secure API key authentication
-- Simple REST API
-- Works with ESP8266 / ESP32
 
