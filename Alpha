@@ -15,5 +15,7 @@ Never expose the device directly to the public internet without authentication, 
 
 This project allows you to remotely turn OFF the lights in your home using a Wi-Fi–enabled microcontroller (e.g., ESP8266 or ESP32).  
 The system uses a secure HTTP endpoint and a relay module connected to the lamp circuit.
-
+5V power supply
+## Features
+- Remote ON/OFF control
 
