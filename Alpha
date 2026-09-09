@@ -1,21 +1,100 @@
-# Remote Light Control (IoT)
-## Hardware Requirements
-- ESP8266 or ESP32 board
-- Relay module
-- Lamp or light circuit
-- 5V power supply
+# NexusForge ⚡
+
+A modular framework for building, managing, and deploying secure autonomous AI agents.
+
+NexusForge provides a flexible architecture for developers who want to create intelligent agents capable of interacting with APIs, processing data, executing workflows, and operating inside controlled environments.
+
 ## Features
-- Remote ON/OFF control
-- Secure API key authentication
-- Simple REST API
-- Works with ESP8266 / ESP32
 
-## Security Notice
-Never expose the device directly to the public internet without authentication, HTTPS tunneling, or a VPN.
+- 🔹 Modular agent architecture
+- 🔹 Secure task execution pipeline
+- 🔹 Plugin-based tool system
+- 🔹 Memory management layer
+- 🔹 API integration support
+- 🔹 Event-driven workflow engine
+- 🔹 Lightweight and developer-friendly design
 
-This project allows you to remotely turn OFF the lights in your home using a Wi-Fi–enabled microcontroller (e.g., ESP8266 or ESP32).  
-The system uses a secure HTTP endpoint and a relay module connected to the lamp circuit.
-5V power supply
-## Features
-- Remote ON/OFF control
+## Architecture
 
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourname/nexusforge-agent-framework.git
+
+cd nexusforge-agent-framework
+pip install -r requirements.txt
+from nexusforge import Agent
+
+
+agent = Agent(
+    name="ResearchAgent",
+    goal="Analyze blockchain market data"
+)
+
+
+response = agent.run(
+    "Find the latest trends in decentralized infrastructure"
+)
+
+
+print(response)
+class CustomTool:
+
+    name = "market_analyzer"
+
+    def execute(self, data):
+        return {
+            "result": "Analysis completed",
+            "input": data
+        }
+agent.add_tool(CustomTool())
+
+---
+
+## نمونه فایل اصلی پروژه: `agent.py`
+
+```python
+from datetime import datetime
+
+
+class Agent:
+
+    def __init__(self, name, goal):
+        self.name = name
+        self.goal = goal
+        self.memory = []
+
+    def remember(self, data):
+        self.memory.append({
+            "timestamp": datetime.utcnow(),
+            "data": data
+        })
+
+    def analyze(self, task):
+        result = {
+            "agent": self.name,
+            "task": task,
+            "status": "completed",
+            "timestamp": datetime.utcnow().isoformat()
+        }
+
+        self.remember(result)
+
+        return result
+
+
+if __name__ == "__main__":
+
+    agent = Agent(
+        name="NexusAgent",
+        goal="Autonomous research"
+    )
+
+    output = agent.analyze(
+        "Analyze decentralized AI infrastructure"
+    )
+
+    print(output)
+NexusForge is an open-source framework for building secure autonomous AI agents with modular tools, memory systems, and controlled execution pipelines.
